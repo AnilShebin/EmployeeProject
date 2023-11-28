@@ -49,7 +49,7 @@ const updateEmployee = async (req, res) => {
 
 const deleteEmployee = async (req, res) => {
   try {
-    const deletedEmployee = await Employee.findByIdAndRemove(req.params.id);
+    const deletedEmployee = await Employee.findByIdAndDelete(req.params.id);
     if (!deletedEmployee) {
       return res.status(404).json({ message: 'Employee not found' });
     }
